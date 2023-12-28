@@ -20,6 +20,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List sectionSchema = questionData["schema"]["fields"];
+
+  
   static int answeredQuestions = 0;
 
   renderView({
@@ -57,19 +59,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         child: Column(
           children: [
-           const SizedBox(height: 20,),
-            Text(questionData["title"], style:  AppTexts.titleText),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(questionData["title"], style: AppTexts.titleText),
             const SizedBox(
               height: 20,
             ),
             StepProgressIndicator(
-                divisons: sectionSchema.length, coveredSteps: answeredQuestions),
+                divisons: sectionSchema.length,
+                coveredSteps: answeredQuestions),
             renderView(
               objectData: sectionSchema[answeredQuestions],
             ),
             answeredQuestions == sectionSchema.length - 1
                 ? ElevatedButton(
-                  
                     onPressed: () {
                       if (answeredData.values.any((value) => value == null)) {
                         showDialog(
@@ -96,17 +100,17 @@ class _MyHomePageState extends State<MyHomePage> {
               ? InkWell(
                   onTap: () {
                     setState(() {
-                     if ((answeredData["typeOFLoan"] !=
+                      if ((answeredData["Type of loan"] !=
                                   "Balance transfer & Top-up" ||
-                              answeredData["typeOFLoan"] == null) &&
+                              answeredData["Type of loan"] == null) &&
                           answeredQuestions == 4) {
-                        answeredQuestions = answeredQuestions -2 ;
+                        answeredQuestions = answeredQuestions - 2;
                       } else {
                         answeredQuestions--;
                       }
                     });
                   },
-                  child: const backButton(),
+                  child: const CustomBackButton(),
                 )
               : const SizedBox(),
           answeredQuestions < sectionSchema.length - 1
@@ -119,9 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onPressed: () {
                     setState(() {
-                      if ((answeredData["typeOFLoan"] !=
+                      if ((answeredData["Type of loan"] !=
                                   "Balance transfer & Top-up" ||
-                              answeredData["typeOFLoan"] == null) &&
+                              answeredData["Type of loan"] == null) &&
                           answeredQuestions == 2) {
                         answeredQuestions = answeredQuestions + 2;
                       } else {

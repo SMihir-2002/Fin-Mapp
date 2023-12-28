@@ -7,7 +7,7 @@ class NumericTextField extends StatelessWidget {
   final Map textFieldSchema;
   @override
   Widget build(BuildContext context) {
-    answeredData[textFieldSchema["name"]] = null;
+    answeredData[textFieldSchema["label"]] = null;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 18),
       child: Column(
@@ -17,7 +17,7 @@ class NumericTextField extends StatelessWidget {
          const SizedBox(height: 10,),
           TextField(
             onChanged: (val) {
-              answeredData[textFieldSchema["name"]] = val;
+              answeredData[textFieldSchema["label"]] = val;
              
             },
             keyboardType: TextInputType.number,

@@ -2,8 +2,8 @@
 import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 
-class backButton extends StatelessWidget {
-  const backButton({
+class CustomBackButton extends StatelessWidget {
+  const CustomBackButton({
     super.key,
   });
 
