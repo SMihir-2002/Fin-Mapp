@@ -1,4 +1,4 @@
-import 'package:fin_mapp/views/home_view.dart';
+import 'package:fin_mapp/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatelessWidget {

@@ -1,3 +1,4 @@
+import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class Label extends StatelessWidget {
@@ -7,7 +8,7 @@ class Label extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [const SizedBox(width: 20,),
-        Text(data, style: const TextStyle(fontWeight: FontWeight.w500, fontSize: 18),),
+        Text(data, style:  AppTexts.font1,),
       ],
     );
   }

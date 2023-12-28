@@ -1,3 +1,4 @@
+import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:fin_mapp/data.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +66,7 @@ class _SingleSelectWidgetState extends State<SingleSelectWidget> {
         children: [
           Text(
             widget.singleSelectSchema["label"],
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+            style: AppTexts.headerText
           ),
           ...radioList()
         ],

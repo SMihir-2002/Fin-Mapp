@@ -1,5 +1,6 @@
+import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:fin_mapp/data.dart';
-import 'package:fin_mapp/views/result_view.dart';
+import 'package:fin_mapp/screens/result_screen.dart';
 import 'package:fin_mapp/widgets/back_button.dart';
 import 'package:fin_mapp/widgets/dialog_widget.dart';
 import 'package:fin_mapp/widgets/label.dart';
@@ -26,9 +27,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }) {
     switch (objectData['type']) {
       case 'SingleChoiceSelector':
-        return SingleSelectWidget(
-          singleSelectSchema: objectData["schema"],
-        );
       case 'SingleSelect':
         return SingleSelectWidget(
           singleSelectSchema: objectData["schema"],
@@ -60,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
            const SizedBox(height: 20,),
-            Text(questionData["title"], style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),),
+            Text(questionData["title"], style:  AppTexts.titleText),
             const SizedBox(
               height: 20,
             ),
@@ -71,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             answeredQuestions == sectionSchema.length - 1
                 ? ElevatedButton(
-                  key: Key("NextButton"),
+                  
                     onPressed: () {
                       if (answeredData.values.any((value) => value == null)) {
                         showDialog(

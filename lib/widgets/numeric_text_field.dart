@@ -1,3 +1,4 @@
+import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:fin_mapp/data.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,10 @@ class NumericTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 14.0, horizontal: 18),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(textFieldSchema["label"]),
+          Text(textFieldSchema["label"], style: AppTexts.headerText,),
+         const SizedBox(height: 10,),
           TextField(
             onChanged: (val) {
               answeredData[textFieldSchema["name"]] = val;

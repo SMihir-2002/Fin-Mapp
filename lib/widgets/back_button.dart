@@ -1,4 +1,5 @@
 
+import 'package:fin_mapp/constants/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class backButton extends StatelessWidget {
@@ -10,13 +11,12 @@ class backButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: const EdgeInsets.only(left: 40),
-        child: const Row(
+        child:  Row(
           children: [
-            Icon(Icons.arrow_back),
+            const Icon(Icons.arrow_back),
             Text(
               "  Back",
-              style: TextStyle(
-                  fontWeight: FontWeight.w500, fontSize: 18),
+              style: AppTexts.font1,
             ),
           ],
         ));
